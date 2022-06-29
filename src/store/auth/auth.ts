@@ -11,14 +11,14 @@ const initialState: IAuthState = {
     isLoading: false,
     errorMessage: ''
 }
-const authSlice = createSlice({
+const auth = createSlice({
     name: "auth",
     initialState,
     reducers: {},
     extraReducers: {}
 })
 
-export default authSlice.reducer;
+export default auth.reducer;
 
 
 
