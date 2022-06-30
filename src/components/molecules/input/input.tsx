@@ -62,7 +62,7 @@ const Input: FC<IInput> = ({
                        [styles.input_warned]: error,
                    })}
             />
-            <span>{error && error}</span>
+            <span className={styles.error}>{error && error.split(".")[0]}</span>
         </div>
     );
 };
