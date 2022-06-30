@@ -6,7 +6,11 @@
 }
 
 .wrapper {
-  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: 584px;
+  width: 100%;
 
   label {
     width: 100%;
@@ -18,7 +22,6 @@
   }
 
   .input {
-    margin-top: 10px;
     width: 100%;
     min-height: 48px;
     box-sizing: border-box;
@@ -66,11 +69,12 @@
     color: vars.$dark-secondary;
     cursor: auto;
   }
-  span {
-    box-sizing: border-box;
-    padding-left: 16px;
-    margin-top: 3px;
-    min-height: 48px;
-    color: vars.$warning;
-  }
+}
+.error {
+  box-sizing: border-box;
+  padding-left: 16px;
+  min-height: 18px;
+  color: vars.$warning;
+  margin-top: 3px;
+  width: 100%;
 }
