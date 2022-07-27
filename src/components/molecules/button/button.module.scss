@@ -1,0 +1,71 @@
+@use "src/styles/_color-variables" as vars;
+
+.wrapper {
+  box-sizing: border-box;
+  padding: 0 24px;
+  background: transparent;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: 3ms;
+  font-size: 24px;
+  font-weight: 600;
+
+  &:focus {
+    outline: none;
+  }
+}
+.primary {
+  background-color: vars.$color-primary;
+  color: vars.$bg-primary;
+  min-width: 72px;
+  min-height: 48px;
+
+  &:hover {
+    background-color: vars.$color-hover;
+  }
+
+  &:disabled {
+    cursor: auto;
+    background-color: vars.$borders-divider-disabled-bg;
+    color: vars.$dark-secondary;
+  }
+}
+
+.secondary {
+  background-color: vars.$bg-secondary;
+  color: vars.$color-primary;
+  border: 1.2px solid vars.$borders-divider-disabled-bg;
+  min-width: 72px;
+  min-height: 48px;
+
+  &:hover {
+    color: vars.$color-hover;
+    box-shadow: 0 4px 8px 0 vars.$drop-shadow-small;
+  }
+
+  &:disabled {
+    cursor: auto;
+    background-color: vars.$borders-divider-disabled-bg;
+    color: vars.$dark-secondary;
+    box-shadow: none;
+  }
+}
+
+.text {
+  color: vars.$dark-primary;
+  padding: 0;
+
+  &:hover {
+    color: vars.$color-hover;
+  }
+
+  &:disabled {
+    cursor: auto;
+    color: vars.$dark-secondary;
+  }
+}
