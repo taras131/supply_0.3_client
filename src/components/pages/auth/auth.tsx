@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {FormEvent} from 'react';
 import Card from "../../atoms/card/card";
 import Input from "../../molecules/input/input";
 import useFormWithValidation from "../../../hooks/useFormWithValidation";
 import styles from "./auth.module.scss";
+import Button from "../../molecules/button/button";
 
 const initialValues = {
     firstName: "",
@@ -24,14 +25,15 @@ const initialErrors = {
 const Auth = () => {
     const {handleChange, isValid, errors, values, setValues, setIsValid} =
         useFormWithValidation(initialValues, initialErrors);
-    const onSubmit = () => {
+    const onFormSubmit = (e: FormEvent<HTMLFormElement>): void => {
+        e.preventDefault()
 
     }
     return (
         <div className={styles.wrapper}>
             <Card className={styles.form_wrapper}>
                 <form name="accountData"
-                      onSubmit={onSubmit}>
+                      onSubmit={onFormSubmit}>
                     <h2>Регистрация</h2>
                     <Input
                         inputName="firstName"
@@ -105,6 +107,10 @@ const Auth = () => {
                         error={errors.password}
                         onChange={handleChange}
                     />
+                    <Button text={"Зарегистрироваться"}
+                            view={"primary"}
+                            type={"submit"}
+                            isDisabled={!isValid}/>
                 </form>
             </Card>
         </div>
